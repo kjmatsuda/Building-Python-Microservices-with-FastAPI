@@ -1,0 +1,62 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python Debugger: ch04-student",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "main:app",
+                "--reload",
+                "--port", "8000"
+            ],
+            "jinja": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/ch04-student",
+                "NO_PROXY": "localhost"
+            }
+        },
+        {
+            "name": "Python Debugger: ch04-library",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "main:app",
+                "--reload",
+                "--port", "8001"
+            ],
+            "jinja": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/ch04-library",
+                "NO_PROXY": "localhost"
+            }
+        },
+        {
+            "name": "Python Debugger: ch04-faculty",
+            "type": "python",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": [
+                "main:app",
+                "--reload",
+                "--port", "8002"
+            ],
+            "jinja": true,
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/ch04-faculty",
+                "NO_PROXY": "localhost"
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "All Services",
+            "configurations": ["Python Debugger: ch04-student", "Python Debugger: ch04-library", "Python Debugger: ch04-faculty"]
+        }
+    ]
+}
